@@ -19,6 +19,7 @@ module LinkedIn
 
         def post(path, body='', options={})
           response = access_token.post("#{API_PATH}#{path}", body, DEFAULT_HEADERS.merge(options))
+          binding.remote_pry
           raise_errors(response)
           response
         end
